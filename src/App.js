@@ -64,6 +64,7 @@ class Form extends React.Component {
     super(props);
     this.state = {
       input: "",
+      names: [],
     };
     this.handleChange = this.handleChange.bind(this);
     this.resetA = this.resetA.bind(this);
@@ -71,7 +72,9 @@ class Form extends React.Component {
   handleChange(event) {
     this.setState({
       input: event.target.value,
+      names: namesToList(event.target.value)
     });
+    console.log(this.state.names)
   }
   resetA(event) {
     this.setState({
@@ -105,7 +108,7 @@ class Form extends React.Component {
           </label>
 
           <textarea
-            value={listOnLines(namesToList(this.state.input))}
+            value={listOnLines(this.state.names)}
             readOnly
             className="form-control textarea"
             id="exampleFormControlTextarea1"
