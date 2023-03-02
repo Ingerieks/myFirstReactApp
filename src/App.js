@@ -79,6 +79,7 @@ class Form extends React.Component {
   resetA(event) {
     this.setState({
       input: "",
+      names: [],
     });
   }
   render() {
