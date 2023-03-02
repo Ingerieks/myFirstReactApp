@@ -1,38 +1,52 @@
 .App {
-  text-align: center;
+  background: linear-gradient(rgb(93, 163, 190),rgb(171, 231, 255));
+  font-family: didact gothic;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.my-form {
+  font-size: 2rem;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.my-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.button {
+  background-color: rgb(93, 163, 190);
+  border-color: rgb(93, 163, 190);
+}
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+/*@media screen and (min-width: 601px) {
+  .my-form {
+    font-size: 18px;
   }
-  to {
-    transform: rotate(360deg);
+}*/
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  .my-form {
+    font-size: 18px;
   }
 }
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  align-items: center;
+}
+
+.textarea {
+  width: 70vw;
+  height: 20vh;
+}
+
