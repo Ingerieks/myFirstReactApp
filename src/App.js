@@ -9,7 +9,6 @@ function App() {
       <Navbar />
       <header className="App-header"></header>
       <Form />
-      <Button />
     </div>
   );
 }
@@ -67,11 +66,17 @@ class Form extends React.Component {
       input: "",
     };
     this.handleChange = this.handleChange.bind(this);
+    this.resetA = this.resetA.bind(this);
   }
-  handleChange (event) {
+  handleChange(event) {
     this.setState({
-      input: event.target.value
-    })
+      input: event.target.value,
+    });
+  }
+  resetA(event) {
+    this.setState({
+      input: "",
+    });
   }
   render() {
     return (
@@ -83,7 +88,9 @@ class Form extends React.Component {
           >
             Enter student names
           </label>
-          <textarea value={this.state.input} onChange={this.handleChange}
+          <textarea
+            value={this.state.input}
+            onChange={this.handleChange}
             className="form-control textarea"
             id="exampleFormControlTextarea1"
             rows="3"
@@ -96,13 +103,17 @@ class Form extends React.Component {
           >
             Enter classroom responsibilities
           </label>
-          
-          <textarea 
-          value={this.state.input}
+
+          <textarea
+            value={this.state.input}
+            readOnly
             className="form-control textarea"
             id="exampleFormControlTextarea1"
             rows="3"
           ></textarea>
+          <div onClick={this.resetA}>
+            <Button />
+          </div>
         </div>
       </form>
     );
