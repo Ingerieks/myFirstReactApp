@@ -105,7 +105,7 @@ class Form extends React.Component {
           </label>
 
           <textarea
-            value={this.state.input}
+            value={listOnLines(namesToList(this.state.input))}
             readOnly
             className="form-control textarea"
             id="exampleFormControlTextarea1"
@@ -129,4 +129,14 @@ function Button() {
       </button>
     </div>
   );
+}
+
+function namesToList(nameString) {
+  const str = nameString.split(",");
+  return str;
+}
+
+function listOnLines(list) {
+  const multilineString = list.join("\n")
+  return multilineString;
 }
